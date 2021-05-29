@@ -1,5 +1,7 @@
 package com.lenovo.feizai.util;
 
+import java.util.IllegalFormatException;
+
 /**
  * @author feizai
  * @date 2021/5/29 0029 上午 10:44:28
@@ -182,5 +184,26 @@ public class TextUtil {
             }
         }
         return new String(chars);
+    }
+
+    /**
+     * Format the string.
+     *
+     * @param str  The string.
+     * @param args The args.
+     * @return a formatted string.
+     */
+    public static String format(String str, Object... args) {
+        String text = str;
+        if (text != null) {
+            if (args != null && args.length > 0) {
+                try {
+                    text = String.format(str, args);
+                } catch (IllegalFormatException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return text;
     }
 }
