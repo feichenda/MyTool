@@ -95,6 +95,12 @@
     isJson                  :判断是否为JSON格式的字符串
 ```
 
+5. Base64Util.java
+```text
+    encode                  :使用Base64加密算法给字符串加密
+    decode                  :将加密后的字符串进行解密
+```
+
 #### 参与贡献
 
 1. https://github.com/Blankj/AndroidUtilCode（感谢这位大佬提供）
