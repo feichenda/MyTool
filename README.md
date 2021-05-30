@@ -1,15 +1,18 @@
 # MyTool
 
 #### 介绍
+
 这是工具类
 
 #### 安装教程
 
-1.  直接复制工具类到您的目录就可以使用了
+1. 直接复制工具类到您的目录就可以使用了
 
 #### 使用说明
 
-1.  TimeUtil.java  
+1. TimeUtil.java
+
+```text
     getYear                 : 获取当前年份  
     getMouth                : 获取当前月份  
     getDay                  : 获取当前天数  
@@ -45,8 +48,13 @@
     isPm                    : 判断是否下午  
     getValueByCalendarField : 根据日历字段获取值  
     getChineseZodiac        : 获取生肖  
-    getZodiac               : 获取星座  
-2.  TextUtil.java
+    getZodiac               : 获取星座
+    getShowTime             :将时间转换成显示的时间格式，参考微信
+```
+
+2. TextUtil.java
+
+```text
     isEmpty                 : 判断字符串是否为空  
     isTrimEmpty             : 去除空格，判断字符串是否为空  
     isSpace                 : 判断字符串是否有空格  
@@ -60,8 +68,33 @@
     toDBC                   : 将字符串转换为半角  
     toSBC                   : 将字符串转换为全角  
     format                  : 格式化字符串  
+```
 
+3. MD5Util.java
+
+```text
+    string2MD5              :MD5加码 生成32位md5码
+    convertMD5              :加密解密算法 执行一次加密，两次解密
+    使用例子:
+    public static void main(String args[]) {
+        String s = new String("1111");
+        System.out.println("原始：" + s);
+        System.out.println("MD5后：" + string2MD5(s));
+        System.out.println("加密的：" + convertMD5(s));
+        System.out.println("解密的：" + convertMD5(convertMD5(s)));
+    }
+```
+
+4. GsonUtil.java
+```text
+    GsonString              :将对象转成json格式
+    GsonToBean              :将json转成特定的cls的对象
+    jsonToList              :json字符串转成list
+    GsonToListMaps          :json字符串转成list中有map的
+    GsonToMaps              :json字符串转成map的
+    isJson                  :判断是否为JSON格式的字符串
+```
 
 #### 参与贡献
 
-1.  https://github.com/Blankj/AndroidUtilCode（感谢这位大佬提供）
+1. https://github.com/Blankj/AndroidUtilCode（感谢这位大佬提供）
