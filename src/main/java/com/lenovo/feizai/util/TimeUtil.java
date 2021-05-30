@@ -150,6 +150,121 @@ public class TimeUtil {
         return TimeZone.getDefault().getID();
     }
 
+    /**
+     * 将时间转换成显示的时间格式，参考微信
+     * @param addTime
+     * @return
+     */
+    public static String getShowTime(String addTime) {
+        //当前日历时间
+        Calendar currentCalendar = Calendar.getInstance();
+        //发布日历时间
+        Calendar startCalendar = Calendar.getInstance();
+        try {
+            startCalendar.setTime(stringToDate(addTime,LONG_DATEFORMAT));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //当前时间单位
+        int cYear = currentCalendar.get(Calendar.YEAR);
+        int cMonth = currentCalendar.get(Calendar.MONTH);
+        int cDate = currentCalendar.get(Calendar.DAY_OF_MONTH);
+        int cHour = currentCalendar.get(Calendar.HOUR_OF_DAY);
+        int cMinuter = currentCalendar.get(Calendar.MINUTE);
+        //发布时间单位
+        int sYear = startCalendar.get(Calendar.YEAR);
+        int sMonth = startCalendar.get(Calendar.MONTH);
+        int sDate = startCalendar.get(Calendar.DAY_OF_MONTH);
+        int sHour = startCalendar.get(Calendar.HOUR_OF_DAY);
+        int sMinuter = startCalendar.get(Calendar.MINUTE);
+        if (cYear > sYear) {
+            return (cYear - sYear) + "年前";
+        } else if (cMonth > sMonth) {
+            return (cMonth - sMonth) + "个月前";
+        } else if (cDate > sDate) {
+            return (cDate - sDate) > 1 ? (cDate - sDate) + "天前" : "昨天";
+        } else if (cHour > sHour) {
+            return (cHour - sHour) + "小时前";
+        } else if (cMinuter >= sMinuter) {
+            return (cMinuter - sMinuter) < 1 ? "刚刚" : (cMinuter - sMinuter) + "分钟前";
+        }
+        return "";
+    }
+
+    /**
+     * 将时间转换成显示的时间格式，参考微信
+     * @param date
+     * @return
+     */
+    public static String getShowTime(Date date) {
+        //当前日历时间
+        Calendar currentCalendar = Calendar.getInstance();
+        //发布日历时间
+        Calendar startCalendar = Calendar.getInstance();
+        startCalendar.setTime(date);
+        //当前时间单位
+        int cYear = currentCalendar.get(Calendar.YEAR);
+        int cMonth = currentCalendar.get(Calendar.MONTH);
+        int cDate = currentCalendar.get(Calendar.DAY_OF_MONTH);
+        int cHour = currentCalendar.get(Calendar.HOUR_OF_DAY);
+        int cMinuter = currentCalendar.get(Calendar.MINUTE);
+        //发布时间单位
+        int sYear = startCalendar.get(Calendar.YEAR);
+        int sMonth = startCalendar.get(Calendar.MONTH);
+        int sDate = startCalendar.get(Calendar.DAY_OF_MONTH);
+        int sHour = startCalendar.get(Calendar.HOUR_OF_DAY);
+        int sMinuter = startCalendar.get(Calendar.MINUTE);
+        if (cYear > sYear) {
+            return (cYear - sYear) + "年前";
+        } else if (cMonth > sMonth) {
+            return (cMonth - sMonth) + "个月前";
+        } else if (cDate > sDate) {
+            return (cDate - sDate) > 1 ? (cDate - sDate) + "天前" : "昨天";
+        } else if (cHour > sHour) {
+            return (cHour - sHour) + "小时前";
+        } else if (cMinuter >= sMinuter) {
+            return (cMinuter - sMinuter) < 1 ? "刚刚" : (cMinuter - sMinuter) + "分钟前";
+        }
+        return "";
+    }
+
+    /**
+     * 将时间转换成显示的时间格式，参考微信
+     * @param timestamp
+     * @return
+     */
+    public static String getShowTime(Timestamp timestamp) {
+        //当前日历时间
+        Calendar currentCalendar = Calendar.getInstance();
+        //发布日历时间
+        Calendar startCalendar = Calendar.getInstance();
+        startCalendar.setTime(timestampToDate(timestamp));
+        //当前时间单位
+        int cYear = currentCalendar.get(Calendar.YEAR);
+        int cMonth = currentCalendar.get(Calendar.MONTH);
+        int cDate = currentCalendar.get(Calendar.DAY_OF_MONTH);
+        int cHour = currentCalendar.get(Calendar.HOUR_OF_DAY);
+        int cMinuter = currentCalendar.get(Calendar.MINUTE);
+        //发布时间单位
+        int sYear = startCalendar.get(Calendar.YEAR);
+        int sMonth = startCalendar.get(Calendar.MONTH);
+        int sDate = startCalendar.get(Calendar.DAY_OF_MONTH);
+        int sHour = startCalendar.get(Calendar.HOUR_OF_DAY);
+        int sMinuter = startCalendar.get(Calendar.MINUTE);
+        if (cYear > sYear) {
+            return (cYear - sYear) + "年前";
+        } else if (cMonth > sMonth) {
+            return (cMonth - sMonth) + "个月前";
+        } else if (cDate > sDate) {
+            return (cDate - sDate) > 1 ? (cDate - sDate) + "天前" : "昨天";
+        } else if (cHour > sHour) {
+            return (cHour - sHour) + "小时前";
+        } else if (cMinuter >= sMinuter) {
+            return (cMinuter - sMinuter) < 1 ? "刚刚" : (cMinuter - sMinuter) + "分钟前";
+        }
+        return "";
+    }
+
     private static final ThreadLocal<Map<String, SimpleDateFormat>> SDF_THREAD_LOCAL
             = new ThreadLocal<Map<String, SimpleDateFormat>>() {
         @Override
