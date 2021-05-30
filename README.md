@@ -95,8 +95,9 @@
     isJson                  :判断是否为JSON格式的字符串
 ```
 
-5. Base64Util.java
+5. Base64Util.java(!!!由于Android有自带的Base64算法，Android严禁使用该加密算法!!!)
 ```text
+    !!!本工具类只用于java
     encode                  :使用Base64加密算法给字符串加密
     decode                  :将加密后的字符串进行解密
 ```
