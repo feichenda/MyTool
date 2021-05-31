@@ -20,10 +20,10 @@ public class TimeUtil {
     public final static String DATEFORMAT = "yyyy-MM-dd";
     public final static String SIMPLE_TIMEORMAT = "HH:mm";
     public final static String TIMEORMAT = "HH:mm:ss";
-    public final static String DETAIL_TIMEORMAT = "HH:mm:ss.sss";
+    public final static String DETAIL_TIMEORMAT = "HH:mm:ss.SSS";
     public final static String SMIPLE_LONG_DATEFORMAT = "yyyy-MM-dd HH:mm";
     public final static String LONG_DATEFORMAT = "yyyy-MM-dd HH:mm:ss";
-    public final static String DETAIL_LONG_DATEFORMAT = "yyyy-MM-dd HH:mm:ss.sss";
+    public final static String DETAIL_LONG_DATEFORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
 
     /**
      * 获取当前时间
